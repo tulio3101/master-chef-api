@@ -80,9 +80,77 @@
 
 
 	</dependencies>
-
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.12</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>**/model/**</exclude>
+                                <exclude>**/dto/**</exclude>
+								<exclude>**/enums/**</exclude>
+                                <exclude>**/config/*</exclude>
+								<exclude>**/mapper/*</exclude>
+								<exclude>**/exception/*</exclude>
+								<exclude>**/service/*</exclude>
+								<exclude>**/common/*</exclude>
+                                <exclude>**/MasterChefApiApplication.class</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>jacoco-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>CLASS</element>
+                                    <excludes>
+                                    <exclude>edu/dosw/sirha/MasterChefApiApplication</exclude>
+                                    </excludes>
+                                </rule>
+                                <rule>
+                                    <element>PACKAGE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>CLASS</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.00</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                            <excludes>
+                                <exclude>**/model/**</exclude>
+                                <exclude>**/dto/**</exclude>
+								<exclude>**/enums/**</exclude>
+                                <exclude>**/config/*</exclude>
+								<exclude>**/mapper/*</exclude>
+								<exclude>**/exception/*</exclude>
+								<exclude>**/service/*</exclude>
+								<exclude>**/common/*</exclude>
+                                <exclude>**/MasterChefApiApplication.class</exclude>
+                            </excludes>
+                        </configuration>
+                    </execution>
+                </executions>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

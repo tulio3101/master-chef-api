@@ -174,12 +174,30 @@ Al levantar la aplicación, podemos hacer solicitudes mediante **Postman** para 
 
 ![alt text](docs/actualizar.png)
 
+---
+
 ## 📗 Tests
 
+Contamos con pruebas unitarias, donde se logra validar que se puede registrar una receta, validar la búsqueda por ingrediente devuelva resultados correctos y validar que devuelva error si se consulta una receta inexistente.
 
+![alt text](docs/pruebas.png)
+
+![alt text](docs/pruebas2.png)
+
+---
 ## 🎃 Github Actions
 
+Nos apoyamos de Azure y utilizamos el workflow que nos proporciona, donde lo vamos a modificar añadiendo que se ejecuten las pruebas cada vez que se haga push, pull request a la rama develop y desplegando automaticamente en Azure cuando haga push a main.
 
+![alt text](docs/azureWorkflow.png)
+
+![alt text](docs/azure0.png)
+
+![alt text](docs/azure1.png)
+
+![alt text](docs/azure2.png)
+
+---
 
 ## 📘 Documentación Swagger
 
