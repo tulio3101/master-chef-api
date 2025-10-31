@@ -199,10 +199,16 @@ Nos apoyamos de Azure y utilizamos el workflow que nos proporciona, donde lo vam
 
 ---
 
-## 📘 Documentación Swagger
+## 📘 Documentación Swagger - Swagger Azure
 
 A partir de la configuración del Swagger Config y levantando la aplicación podemos acceder mediante la dirección **http://localhost:8080/swagger-ui/index.html** para mirar la respectiva documentación.
 
 ![alt text](docs/swagger0.png)
 
 ![alt text](docs/swagger1.png)
+
+De igual manera al desplegar en azure obtenemos un link para acceder de manera remota el swagger UI:
+
+http://master-chef-api-acekfxbbbshhhncs.canadacentral-01.azurewebsites.net/swagger-ui.html
+
+![alt text](docs/image.png)
